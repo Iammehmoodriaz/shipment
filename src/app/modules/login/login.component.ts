@@ -21,8 +21,8 @@ export class LoginComponent implements OnInit {
   ) { }
   public returnUrl: string;
   public auth: Login = {
-    email: '',
-    password: ''
+    email: 'admin@gmail.com',
+    password: '1234abcd'
   }
 
   ngOnInit() {

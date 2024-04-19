@@ -1,0 +1,67 @@
+<div>
+    <div class="page-title">
+        <h1>Add Shipment
+        </h1>
+    </div>
+    <div class="page-body">
+        <div>
+            <mat-accordion>
+                <mat-expansion-panel [expanded]="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <h4>First Form</h4>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <ng-template matExpansionPanelContent>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Favorite food</mat-label>
+                                    <input matInput placeholder="Ex. Pizza" value="Sushi">
+                                  </mat-form-field>
+                            </div>
+                            <div class="col-md-4">
+                                <mat-form-field>
+                                    <mat-label>Select</mat-label>
+                                    <mat-select>
+                                      <mat-option value="one">First option</mat-option>
+                                      <mat-option value="two">Second option</mat-option>
+                                    </mat-select>
+                                  </mat-form-field>
+                            </div>
+                            <div class="col-md-4">
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Favorite food</mat-label>
+                                    <input matInput placeholder="Ex. Pizza" value="Sushi">
+                                  </mat-form-field>
+                            </div>
+                        </div>
+                    </ng-template>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <h4>Second Form</h4>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <ng-template matExpansionPanelContent>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="">Name</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="">Select</label>
+                                    <ng-select class="custom"></ng-select>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+</div>

@@ -16,9 +16,10 @@ import { CalendarModule } from 'angular-calendar';
 import { WebcamModule } from 'ngx-webcam';
 import { NgxPrintModule } from 'ngx-print';
 import { ShipmentsComponent } from './shipments/shipments.component';
+import { AddEditShipmentComponent } from './shipments/add-edit-shipment/add-edit-shipment.component';
 
 @NgModule({
-  declarations: [MainComponent, Safe, Notfound404Component,  Forbidden403Component, ShipmentsComponent, ],
+  declarations: [MainComponent, Safe, Notfound404Component,  Forbidden403Component, ShipmentsComponent, AddEditShipmentComponent, ],
   imports: [
     CommonModule,
     MainRoutingModule,

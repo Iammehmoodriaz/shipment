@@ -271,3 +271,38 @@ body {
   .ng-select.ng-select-disabled .ng-select-container .ng-value-container .ng-value{
     color: rgba(0,0,0,.6) !important;
   }
+  .form-group{
+    label{
+      margin-bottom: 0;
+      font-weight: 500;
+      color: #666;
+      font-size: 13px;
+    }
+    .form-control{
+      padding: 10px 15px;
+      color: #333;
+      height: auto;
+      line-height: normal;
+      &:focus{
+        border-color: #cf9c51;
+        box-shadow: none;
+      }
+    }
+  }
+  .ng-select .ng-select-container{
+    padding: 8px 10px;
+    height: auto !important;
+  }
+  .ng-select.ng-select-single .ng-select-container .ng-value-container .ng-input{
+    top: 50%;
+    transform: translateY(-50%)
+  }
+//   .ng-select.custom {
+//     border:0px;
+//     min-height: 0px;
+//     border-radius: 0;
+// }
+// .ng-select.custom .ng-select-container  {            
+//     min-height: 0px;
+//     border-radius: 0;
+// }

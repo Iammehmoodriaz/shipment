@@ -1,39 +1,42 @@
 <div class="main-toolbar" style="background-color: #121212;">
-  <!-- <span>
+  <div class="container-fluid d-flex align-items-center">
+<!-- <span>
     <button mat-mini-fab color="primary" (click)="sidenav.toggle()">
       <i class="las la-bars"></i>
     </button>
   </span> -->
   <span style="font-size: 16px;font-weight:500;color:#111">
-    
+
     <img src="./assets/images/LogoHeader.svg">
   </span>
   <span class="spacer">
-    
-  <mat-nav-list class="list-horizontal p-0">
-    <a mat-list-item [routerLink]="['/main/dashboard']" [routerLinkActive]="'active'">DASHBOARD</a>
-    <a mat-list-item [routerLink]="['/main/shipments']" [routerLinkActive]="'active'">SHIPMENT</a>
-    <a mat-list-item href="#">LABELS</a>
-    <a mat-list-item href="#">PICK-UP</a>
-</mat-nav-list>
+
+    <mat-nav-list class="list-horizontal p-0">
+      <a mat-list-item [routerLink]="['/main/dashboard']" [routerLinkActive]="'active'">DASHBOARD</a>
+      <a mat-list-item [routerLink]="['/main/shipments']" [routerLinkActive]="'active'">SHIPMENT</a>
+      <a mat-list-item href="#">LABELS</a>
+      <a mat-list-item href="#">PICK-UP</a>
+    </mat-nav-list>
   </span>
   <span class="t-menu" [ngClass]="{'d-flex':toggler}">
     <button [matMenuTriggerFor]="menu" style="color: #ddd;" mat-button>Ahmad</button>
     <mat-menu #menu="matMenu">
       <!-- <button mat-menu-item >Profile</button>
       <button mat-menu-item >Personal Information</button> -->
-      <button mat-menu-item (click)="logout()" >Sign out</button>
+      <button mat-menu-item (click)="logout()">Sign out</button>
     </mat-menu>
   </span>
   <span class="t-menu-drop" (click)="toggler=!toggler">
     <i class="icon-options-vertical"></i>
   </span>
+  </div>
+  
 </div>
 <div>
-  
+
 </div>
 <mat-sidenav-container class="example-container">
-  
+
   <mat-sidenav-content class="content pad">
     <div class="container-fluid">
       <router-outlet></router-outlet>

@@ -5,6 +5,7 @@ import { AuthGuard } from 'src/app/core/guards/auth.guard';
 import { Notfound404Component } from './notfound404/notfound404.component';
 import { Forbidden403Component } from './forbidden403/forbidden403.component';
 import { ShipmentsComponent } from './shipments/shipments.component';
+import { AddEditShipmentComponent } from './shipments/add-edit-shipment/add-edit-shipment.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,10 @@ const routes: Routes = [
       {
         path: 'shipments',
         component: ShipmentsComponent
+      },
+      {
+        path: 'addEditShipment',
+        component: AddEditShipmentComponent
       },
       {
         path: '404',
