@@ -1,0 +1,26 @@
+.b-accordin{
+    >.mat-expanded{
+        box-shadow: 0px 0px 15px rgb(0 0 0 / 20%);
+    }
+    .mat-expansion-panel{
+        .mat-expansion-panel-header{
+            .mat-content{
+                .mat-expansion-panel-header-title{
+                    color: $btnPrimary;
+                    font-weight: 500;
+                }
+            }
+        }
+        .mat-expansion-panel-content{
+            .mat-expansion-panel-body{
+                .mat-action-row{
+                    border:none;
+                    padding: 5px;
+                }
+            }
+        }
+        &:not([class*=mat-elevation-z]){
+            box-shadow: 0px 5px 15px rgb(0 0 0 / 20%);
+        }
+    }
+}

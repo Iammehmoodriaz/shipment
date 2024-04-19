@@ -1,0 +1,16 @@
+
+    <div class="login-main">
+        <div class="blurred-box">
+            <div class="loginForm">
+                <div class="user-name">
+                        <img alt="" width="50px" src="./assets/images/LogoHeader.svg"></div>
+                <input class="login-input" type="text" name="email" placeholder="Email" [(ngModel)]="auth.email">
+                <input class="login-input" type="password" name="password" placeholder="Password" [(ngModel)]="auth.password" (keyup.enter)="login()">
+                <!-- <a href="/login/forgotPassword">Forgot Password?</a> -->
+                <button class="login-btn" (click)="login()" >Login</button>
+            </div>
+        </div>
+        <!-- <div class="image-box">
+
+        </div> -->
+    </div>

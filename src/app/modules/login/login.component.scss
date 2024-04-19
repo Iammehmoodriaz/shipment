@@ -1,0 +1,110 @@
+
+
+.login-wrapper{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.login-main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #121212;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica;
+    letter-spacing: 0.02em;
+     font-weight: 400;
+    -webkit-font-smoothing: antialiased; 
+   }
+   
+   .blurred-box{
+    position: relative;
+     width: 30%;
+     height: 100%;
+     background: inherit;
+     overflow: hidden;
+   }
+   .image-box{
+    width: 70%;
+    height: 100%;
+    background: inherit;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+    background-size: auto;
+    background-position: center center;
+    //background-image:url(http://bit.ly/2gPLxZ4);
+   }
+   
+   /* Form which you dont need */
+   .loginForm{
+     position: absolute;
+     width: 80%;
+     height: auto;
+     top: 50%;
+     left:50%;
+     transform: translate(-50%,-50%);
+     text-align: center;
+     z-index: 1;
+
+   }
+   .user-login-box > *{
+     display: inline-block;
+     width: 200px;
+   }
+   
+.login-btn{
+  margin: 10px 0;
+    width: 100%;
+    text-align: center;
+    border: none;
+    outline: none;
+    padding: 15px 0;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #fff;
+    background: #cf9c51;
+    transition: 0.2s all;
+    border-radius: 40px;
+    &:hover{
+        cursor: pointer;
+        box-shadow: 0px 10px 14px rgba(0, 0, 0, 0.1);
+        transition: 0.2s all;
+    }
+}   
+.login-input{
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #282828;
+    background: #eee;
+    box-shadow: 0px 5px 15px rgb(0 0 0 / 30%);
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+   .user-name{
+     margin: 30px 0;
+     color: #444;
+     font-weight: 600;
+     img{
+       width: 300px;
+     }
+   }
+   
+   input.user-password{
+     width: 120px;
+     height: 18px;
+     opacity: 0.4;
+     border-radius: 2px;
+     padding: 5px 15px;
+     border: 0;
+   }
+   

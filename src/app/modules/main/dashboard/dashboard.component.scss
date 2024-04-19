@@ -1,0 +1,86 @@
+.clockin{
+    text-align: center;
+    .c-label{
+        font-size: 12px;
+        margin-right: 10px;
+        color: #777;
+    }
+    .c-time{
+        font-size: 18px;
+        font-weight: 600;
+        //color: #3f51b5;
+    }
+}
+
+.card-table{
+    margin: none;
+    padding: none;
+    width: 100%;
+    font-size: 12px;
+    thead{
+        font-weight: 500;
+        tr{
+            th{
+                border-bottom: 1px solid #eee;
+                &:first-child{
+                    text-align: left;
+                }
+                &:last-child{
+                    text-align: right;
+                }
+            }
+        }
+    }
+    tbody{
+        text-align: center;
+        tr{
+            background:inherit;
+            td{
+                border-bottom: 1px solid #eee;
+                &:first-child{
+                    color: #777;
+                    text-align: left;
+                }
+                &:last-child{
+                    font-size: 13px;
+                    text-align: right;
+                    //color: #3f51b5;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+.weather-banner{
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow:1px 1px 10px rgb(0 0 0 / 15%);
+    padding: 10px 25px;
+    border-radius: 8px;
+    text-align: center;
+    img{
+        width: 40px;
+        height: 40px;
+    }
+    label{
+        font-weight: 500;
+        color: #3f51b5;
+        margin-left: 10px;
+        vertical-align: middle;
+        font-size: 12px;
+        margin-bottom: 0px;
+        span{
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+}
+
+
+.clickAble{
+    cursor: pointer;
+    &:hover{
+        text-decoration: underline;
+    }
+}

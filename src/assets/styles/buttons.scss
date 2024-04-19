@@ -1,0 +1,221 @@
+$btnPrimary: #cf9c51;
+
+.b-btn{
+    padding: 10px 30px;
+    font-size: 12px;
+    font-weight:500;
+    border:none;
+    outline: none;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    &:disabled{
+        cursor: not-allowed;
+    }
+}
+.b-btn-sm{
+    padding: 10px 15px;
+    font-size: 12px;
+    font-weight:500;
+    border:none;
+    outline: none;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    &:disabled{
+        cursor: not-allowed;
+    }
+}
+
+.b-btn-primary{
+    background: $btnPrimary;
+    border: $btnPrimary solid 1px;
+    color: #fff;
+    box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+    &:hover{
+        background: darken($color: $btnPrimary, $amount: 15%);
+        border-color: darken($color: $btnPrimary, $amount: 15%);
+    }
+    &:disabled{
+        background: lighten($color: $btnPrimary, $amount: 10%);
+        cursor:not-allowed;
+    }
+}
+
+.b-btn-outline{
+background: #fff;
+border: $btnPrimary solid 1px;
+color: $btnPrimary;
+transition: 0.3s all;
+&:hover{
+    color: #fff;
+    background: $btnPrimary;
+}
+}
+
+.icon-btn{    
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0 .4em;
+    font-weight: 500;
+    color: $btnPrimary;
+    transition: 0.2s all;
+    &:hover{
+        font-weight: 700;
+    }
+}
+.icon-btn-delete{
+    color: red;
+}
+
+.b-tags{
+    background: $btnPrimary;
+    color: #fff;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-weight: 500;
+    font-size: 13px;
+    margin: 0 5px;
+    position: relative;
+    i{
+        position: absolute;
+        top: -5px;
+        background: #000;
+        font-size: 14px;
+        right: -5px;
+        border-radius: 8px;
+        cursor: pointer;
+        &:hover{
+            font-size: 16px;
+        }
+    }
+}
+
+.stickyNoteBtn{
+    padding: 20px;
+    font-size: 24px;
+    font-weight:500;
+    color: #777;
+    border:none;
+    outline: none;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    text-transform: uppercase;
+    &:hover{
+        color: #000;
+    }
+}
+
+
+.btn-group {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.btn-group > .btn,
+.btn-group-vertical > .btn {
+  position: relative;
+  flex: 1 1 auto;
+}
+
+.btn-group > .btn:not(:first-child),
+.btn-group > .btn-group:not(:first-child) {
+  margin-left: -1px;
+}
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn-group:not(:last-child) > .btn {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.btn-group > .btn:nth-child(n+3),
+.btn-group > :not(.btn-check) + .btn,
+.btn-group > .btn-group:not(:first-child) > .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+  .btn:hover {
+    color: #212529;
+  }
+  .btn-check:focus + .btn, .btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(15, 15, 15, 0.5);
+  }
+  .btn:disabled, .btn.disabled, fieldset:disabled .btn {
+    pointer-events: none;
+    opacity: 0.65;
+  }
+  
+.btn-primary {
+    color: #fff;
+    background-color: $btnPrimary;
+    border-color: $btnPrimary;
+  }
+  .btn-primary:hover {
+    color: #fff;
+    background-color: #121212;
+    border-color: #121212;
+  }
+  .btn-check:focus + .btn-primary, .btn-primary:focus {
+    color: #fff;
+    background-color: #121212;
+    border-color: #121212;
+    box-shadow: 0 0 0 0.25rem rgba(15, 15, 15, 0.5);
+  }
+  .btn-check:checked + .btn-primary, .btn-check:active + .btn-primary, .btn-primary:active, .btn-primary.active, .show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #121212;
+    border-color: #121212;
+  }
+  .btn-check:checked + .btn-primary:focus, .btn-check:active + .btn-primary:focus, .btn-primary:active:focus, .btn-primary.active:focus, .show > .btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.25rem rgba(15, 15, 15, 0.5);
+  }
+
+  .btn-outline-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
+  }
+  .btn-outline-secondary:hover {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+  }
+  .btn-check:focus + .btn-outline-secondary, .btn-outline-secondary:focus {
+    box-shadow: 0 0 0 0.25rem rgba(108, 117, 125, 0.5);
+  }
+  .btn-check:checked + .btn-outline-secondary, .btn-check:active + .btn-outline-secondary, .btn-outline-secondary:active, .btn-outline-secondary.active, .btn-outline-secondary.dropdown-toggle.show {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+  }
+  .btn-check:checked + .btn-outline-secondary:focus, .btn-check:active + .btn-outline-secondary:focus, .btn-outline-secondary:active:focus, .btn-outline-secondary.active:focus, .btn-outline-secondary.dropdown-toggle.show:focus {
+    box-shadow: 0 0 0 0.25rem rgba(108, 117, 125, 0.5);
+  }
+  .btn-outline-secondary:disabled, .btn-outline-secondary.disabled {
+    color: #6c757d;
+    background-color: transparent;
+  }

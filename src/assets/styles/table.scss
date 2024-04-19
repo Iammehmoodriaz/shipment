@@ -1,0 +1,23 @@
+table.mat-table{
+    width: 100%;
+    background:inherit;
+    thead{
+        // background: #3f51b5;
+        tr{
+            th{
+                // color: #fff;
+                font-size: 16px;
+                font-weight: 600;
+            }
+        }
+    }
+}
+.mat-elevation-z8{
+    box-shadow: none;
+}
+.mat-sort-header-stem{
+    color: #fff;
+}
+.mat-sort-header-indicator{
+    color: #fff;
+}
