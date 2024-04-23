@@ -306,3 +306,8 @@ body {
 //     min-height: 0px;
 //     border-radius: 0;
 // }
+
+input[type=date].form-control, input[type=datetime-local].form-control, input[type=month].form-control, input[type=time].form-control{
+  line-height: normal;
+  padding: 9px 15px;
+}

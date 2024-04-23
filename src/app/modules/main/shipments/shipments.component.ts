@@ -1,49 +1,72 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator, MatTableDataSource } from '@angular/material';
+import { AfterViewInit, ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator, MatSnackBar, MatTableDataSource, PageEvent } from '@angular/material';
+import { Router } from '@angular/router';
+import { ShipmentsService } from 'src/app/core/services/basicServices/shipments.service';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-shipments',
   templateUrl: './shipments.component.html',
   styleUrls: ['./shipments.component.scss']
 })
 export class ShipmentsComponent implements AfterViewInit {
  
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['parcelID', 'trackNo', 'service', 'shipmentID','status','actions'];
   dataSource = new MatTableDataSource<any>();
   @ViewChild(MatPaginator,{static:false}) paginator: MatPaginator;
  
-  constructor() {
+  tableModel = {search:'', startDate:null,endDate:null,page:1,size:10 };
+
+  constructor(private shipmentService:ShipmentsService,
+    public router: Router,public Alerts: MatSnackBar) {
     this.dataSource.paginator = this.paginator; }
 
   ngAfterViewInit() {
     this.dataTableConfig();
-    
   }
 
+
   dataTableConfig() {
-    this.dataSource .data= [
-      {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-      {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-      {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-      {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-      {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-      {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-      {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-      {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-      {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-      {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-      {position: 11, name: 'Sodium', weight: 22.9897, symbol: 'Na'},
-      {position: 12, name: 'Magnesium', weight: 24.305, symbol: 'Mg'},
-      {position: 13, name: 'Aluminum', weight: 26.9815, symbol: 'Al'},
-      {position: 14, name: 'Silicon', weight: 28.0855, symbol: 'Si'},
-      {position: 15, name: 'Phosphorus', weight: 30.9738, symbol: 'P'},
-      {position: 16, name: 'Sulfur', weight: 32.065, symbol: 'S'},
-      {position: 17, name: 'Chlorine', weight: 35.453, symbol: 'Cl'},
-      {position: 18, name: 'Argon', weight: 39.948, symbol: 'Ar'},
-      {position: 19, name: 'Potassium', weight: 39.0983, symbol: 'K'},
-      {position: 20, name: 'Calcium', weight: 40.078, symbol: 'Ca'},
-    ];
+    this.getList();
     this.dataSource.paginator = this.paginator;
+  }
+
+  getList(){
+    if(this.tableModel.startDate && this.tableModel.endDate){
+      if(Date.parse(this.tableModel.startDate) > Date.parse(this.tableModel.endDate)){
+        this.Alerts.open('Start date should not be greater than End date','OK')
+        return false;
+      }
+    }
+    this.shipmentService.getAllShipments(this.tableModel).subscribe(res=>{
+      if(res){
+        this.dataSource.data=res.data;
+      }
+      else{
+        this.dataSource.data=[];
+      }
+    })
+  }
+
+  onPaginate(pageEvent: PageEvent) {
+    // debugger
+    this.tableModel.size = pageEvent.pageSize;
+    this.tableModel.page = pageEvent.pageIndex + 1;
+    this.getList();
+    // console.log(this.dataSource.sort)
+  }
+
+  view(id){
+    if (id) {
+      this.router.navigate(["main/viewShipment/"], { queryParams: { id: id } });
+    } 
+  }
+
+  reset(){
+    this.tableModel.search='';
+    this.tableModel.startDate=null;
+    this.tableModel.endDate=null;
+    this.getList();
   }
 
 }

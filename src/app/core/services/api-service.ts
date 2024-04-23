@@ -34,7 +34,7 @@ export abstract class BaseService implements IBaseService {
         
 
     processPayload<T>(payload , messageTypeIds?: string[]): Observable<T> {
-        const message = payload.meta;
+        const message = payload.message;
 
         messageTypeIds = messageTypeIds || [MessageTypes.error, MessageTypes.failure];
 

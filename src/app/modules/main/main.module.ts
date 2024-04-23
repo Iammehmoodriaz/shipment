@@ -17,9 +17,11 @@ import { WebcamModule } from 'ngx-webcam';
 import { NgxPrintModule } from 'ngx-print';
 import { ShipmentsComponent } from './shipments/shipments.component';
 import { AddEditShipmentComponent } from './shipments/add-edit-shipment/add-edit-shipment.component';
+import { ViewShipmentComponent } from './shipments/view-shipment/view-shipment.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
-  declarations: [MainComponent, Safe, Notfound404Component,  Forbidden403Component, ShipmentsComponent, AddEditShipmentComponent, ],
+  declarations: [MainComponent, Safe, Notfound404Component,  Forbidden403Component, ShipmentsComponent, AddEditShipmentComponent, ViewShipmentComponent, ],
   imports: [
     CommonModule,
     MainRoutingModule,
@@ -30,6 +32,7 @@ import { AddEditShipmentComponent } from './shipments/add-edit-shipment/add-edit
     NgSelectModule,
     CalendarModule,
     WebcamModule, NgxPrintModule,
+    PdfViewerModule
   ],
   entryComponents: [
 

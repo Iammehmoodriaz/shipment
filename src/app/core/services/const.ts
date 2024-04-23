@@ -1,5 +1,12 @@
+
 export const apiPath = {
-    accessTokenKey: 'auth',
+    accessTokenKey: 'SSAuth',
+
+    authLogin:'auth/Login',
+
+    getShipments:'PitneyBowes/GetAllShipments',
+    getShipmentbyID:'PitneyBowes/GetShipmentById',
+    createShipment:'PitneyBowes/CreateShipmentDomestic'
 }
 
 

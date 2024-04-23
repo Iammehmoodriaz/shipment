@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Login } from "src/app/shared/models";
 import { Observable, observable } from "rxjs";
-import { HttpRestService, BaseService } from "@services";
+import { HttpRestService, BaseService, apiPath } from "@services";
 import { map } from 'rxjs/operators';
 import { getuid } from "process";
 import { ObserversModule } from "@angular/cdk/observers";
@@ -23,24 +23,19 @@ export class AuthService extends BaseService {
   }
 
   public userLogin(data: Login) {
-    let body = JSON.stringify({
-      "email": data.email,
-      "password": data.password
-    })
-    let url = environment.baseURL + 'login/'
-    //return this.post('login/', body)
 
     let onSuccess = (value) => {
       let data = value.value;
-      if (data.meta.success) {
-        this.Alerts.open(data.meta.message, 'ok');
-        return data.data;
+      if (data.data.success) {
+        this.Alerts.open('Login Successfull', 'ok');
+        return data.data.data;
       }
       else {
-        this.Alerts.open(data.meta.message, 'ok');
+        this.Alerts.open(data.message.text, 'ok');
+        return false
       }
     }
-    return this.service(this.post('login/', body)).pipe(
+    return this.service(this.post(apiPath.authLogin, data)).pipe(
       map(value => this.processPayload(value)),
       map(onSuccess)
     );

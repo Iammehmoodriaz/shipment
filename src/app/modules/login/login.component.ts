@@ -21,8 +21,8 @@ export class LoginComponent implements OnInit {
   ) { }
   public returnUrl: string;
   public auth: Login = {
-    email: 'admin@gmail.com',
-    password: '1234abcd'
+    username: '5zR9LoM8aQx7DIg2tF6Y',
+    password: 'P@ssw0rd'
   }
 
   ngOnInit() {
@@ -33,20 +33,14 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    // this._authService.userLogin(this.auth).subscribe(response => {
-    //   if (response) {
-    //     TokenHelper.setAccessToken(response.access_token);
-    //     this._router.navigate([this.returnUrl])
-    //   }
+    this._authService.userLogin(this.auth).subscribe(response => {
+      if (response) {
+        debugger
+        TokenHelper.setAccessToken(response.access_token);
+        this._router.navigate([this.returnUrl])
+      }
 
-    // })
-    if(this.auth.email=='admin@gmail.com' && this.auth.password=='1234abcd'){
-      localStorage.setItem('auth', "kjghaldhgaHFKjndflkjBSLKJ");
-      this._router.navigate([this.returnUrl])
-    }
-    else{
-      alert('username or password not correct')
-    }
+    })
   }
   // loginWithMS() {
   //   const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;

@@ -6,6 +6,7 @@ import { Notfound404Component } from './notfound404/notfound404.component';
 import { Forbidden403Component } from './forbidden403/forbidden403.component';
 import { ShipmentsComponent } from './shipments/shipments.component';
 import { AddEditShipmentComponent } from './shipments/add-edit-shipment/add-edit-shipment.component';
+import { ViewShipmentComponent } from './shipments/view-shipment/view-shipment.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'dashboard',
+        redirectTo: 'shipments',
         pathMatch: 'full'
       },
       {
@@ -30,6 +31,10 @@ const routes: Routes = [
       {
         path: 'addEditShipment',
         component: AddEditShipmentComponent
+      },
+      {
+        path: 'viewShipment',
+        component: ViewShipmentComponent
       },
       {
         path: '404',

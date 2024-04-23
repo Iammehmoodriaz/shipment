@@ -46,6 +46,7 @@ import { DatePipe } from '@angular/common';
 import { NgxMaskModule } from 'ngx-mask';
 import { MomentModule } from 'ngx-moment';
 import { NgxOrgChartModule } from 'ngx-org-chart';
+import { MatFormFieldModule } from '@angular/material';
 
 
 @NgModule({
@@ -97,7 +98,8 @@ import { NgxOrgChartModule } from 'ngx-org-chart';
     MatStepperModule,
     NgxMaskModule.forRoot(),
     MomentModule,
-    NgxOrgChartModule
+    NgxOrgChartModule,
+    MatFormFieldModule
   ],
   exports: [
     A11yModule,
@@ -146,7 +148,9 @@ import { NgxOrgChartModule } from 'ngx-org-chart';
     MatStepperModule,
     NgxMaskModule,
     MomentModule,
+    MatFormFieldModule,
     NgxOrgChartModule
+
   ],
   schemas: [
     NO_ERRORS_SCHEMA,

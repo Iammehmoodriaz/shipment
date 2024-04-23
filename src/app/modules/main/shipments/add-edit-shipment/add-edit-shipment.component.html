@@ -1,67 +1,225 @@
 <div>
-    <div class="page-title">
-        <h1>Add Shipment
-        </h1>
-    </div>
-    <div class="page-body">
-        <div>
-            <mat-accordion>
-                <mat-expansion-panel [expanded]="true">
-                    <mat-expansion-panel-header>
-                        <mat-panel-title>
-                            <h4>First Form</h4>
-                        </mat-panel-title>
-                    </mat-expansion-panel-header>
-                    <ng-template matExpansionPanelContent>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <mat-form-field class="example-full-width">
-                                    <mat-label>Favorite food</mat-label>
-                                    <input matInput placeholder="Ex. Pizza" value="Sushi">
-                                  </mat-form-field>
-                            </div>
-                            <div class="col-md-4">
-                                <mat-form-field>
-                                    <mat-label>Select</mat-label>
-                                    <mat-select>
-                                      <mat-option value="one">First option</mat-option>
-                                      <mat-option value="two">Second option</mat-option>
-                                    </mat-select>
-                                  </mat-form-field>
-                            </div>
-                            <div class="col-md-4">
-                                <mat-form-field class="example-full-width">
-                                    <mat-label>Favorite food</mat-label>
-                                    <input matInput placeholder="Ex. Pizza" value="Sushi">
-                                  </mat-form-field>
-                            </div>
-                        </div>
-                    </ng-template>
-                </mat-expansion-panel>
-                <mat-expansion-panel>
-                    <mat-expansion-panel-header>
-                        <mat-panel-title>
-                            <h4>Second Form</h4>
-                        </mat-panel-title>
-                    </mat-expansion-panel-header>
-                    <ng-template matExpansionPanelContent>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="">Name</label>
-                                    <input type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="">Select</label>
-                                    <ng-select class="custom"></ng-select>
-                                </div>
-                            </div>
-                        </div>
-                    </ng-template>
-                </mat-expansion-panel>
-            </mat-accordion>
+    <form [formGroup]="form">
+        <div class="page-title">
+            <h1>Add Shipment
+                <button class="btn btn-primary" [disabled]="!form.valid" (click)="save()">Save</button>
+            </h1>
         </div>
-    </div>
+        <div class="page-body">
+            <div>
+                <mat-accordion>
+                    <mat-expansion-panel [expanded]="true" formGroupName="fromAddress">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h4>From Address</h4>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <ng-template matExpansionPanelContent>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Address 1</label>
+                                        <input type="text" class="form-control" formControlName="addressLine1">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Address 2</label>
+                                        <input type="text" class="form-control" formControlName="addressLine2">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Address 3</label>
+                                        <input type="text" class="form-control" formControlName="addressLine3">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">City</label>
+                                        <input type="text" class="form-control" formControlName="cityTown">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">State/Province</label>
+                                        <input type="text" class="form-control" formControlName="stateProvince">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Country</label>
+                                        <input type="text" class="form-control" formControlName="countryCode">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Name</label>
+                                        <input type="text" class="form-control" formControlName="name">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Company</label>
+                                        <input type="text" class="form-control" formControlName="company">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Phone</label>
+                                        <input type="text" class="form-control" formControlName="phone">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Postal Code</label>
+                                        <input type="text" class="form-control" formControlName="postalCode">
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </mat-expansion-panel>
+                    <mat-expansion-panel formGroupName="toAddress">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h4>To Address</h4>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <ng-template matExpansionPanelContent>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Address 1</label>
+                                        <input type="text" class="form-control" formControlName="addressLine1">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Address 2</label>
+                                        <input type="text" class="form-control" formControlName="addressLine2">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Address 3</label>
+                                        <input type="text" class="form-control" formControlName="addressLine3">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">City</label>
+                                        <input type="text" class="form-control" formControlName="cityTown">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">State/Province</label>
+                                        <input type="text" class="form-control" formControlName="stateProvince">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Country</label>
+                                        <input type="text" class="form-control" formControlName="countryCode">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Name</label>
+                                        <input type="text" class="form-control" formControlName="name">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Company</label>
+                                        <input type="text" class="form-control" formControlName="company">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Phone</label>
+                                        <input type="text" class="form-control" formControlName="phone">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Postal Code</label>
+                                        <input type="text" class="form-control" formControlName="postalCode">
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel formGroupName="parcel">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h4>Parcel</h4>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <ng-template matExpansionPanelContent>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Dimension Unit</label>
+                                        <ng-select [items]="dimUnits" bindLabel="name" bindValue="id" formControlName="dimUnit"></ng-select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Weight Unit</label>
+                                        <ng-select [items]="weightUnits" bindLabel="name" bindValue="id" formControlName="weightUnit"></ng-select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Height</label>
+                                        <input type="text" class="form-control" formControlName="height">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Width</label>
+                                        <input type="text" class="form-control" formControlName="width">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Length</label>
+                                        <input type="text" class="form-control" formControlName="length">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Weight</label>
+                                        <input type="text" class="form-control" formControlName="weight">
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </mat-expansion-panel>
+                    
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h4>Other</h4>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <ng-template matExpansionPanelContent>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Shipment Date</label>
+                                        <input class="form-control" type="date" formControlName="dateOfShipment">
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+        </div>
+    </form>
+
 </div>
